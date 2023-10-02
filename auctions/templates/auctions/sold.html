@@ -1,0 +1,38 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <div>
+        <h3>{{product.title}}</h3>
+        <img src="{{product.image}}" alt="Product Image" height="200">
+        {% if isSeller %}
+            {% if noBid %}
+                <h4>Sorry!..</h4>
+                <p>You have closed the auction for {{product.title}} with no bids.</p>
+
+            {% else %}
+                <h4>Congratulations!..</h4>
+                <p>You Sold {{product.title}} to {{buyer.username}} for $ {{product.currentBid}}</p>
+                <p>Contact Details of the Buyer:</p>
+                <ul>
+                    <li>Name: {{buyer.username}}</li>
+                    <li>Email: {{buyer.email}}</li>
+                </ul>
+
+            {% endif %} 
+
+        {% elif isBuyer %}
+            <h4>Hurray!..</h4>
+            <p>You Bought {{product.title}} (listed by {{product.listedBy.username}}) for $ {{product.currentBid}}</p>
+            <p>Contact Details of the Seller:</p>
+            <ul>
+                <li>Name: {{product.listedBy.username}}</li>
+                <li>Email: {{product.listedBy.email}}</li>
+            </ul>
+
+        {% else %}
+            <h4>Sold Out..</h4>
+            <p>Sorry, it has already been sold. Auction is no longer available.</p>
+
+        {% endif %}
+    </div>
+{% endblock %}

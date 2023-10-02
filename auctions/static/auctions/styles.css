@@ -1,0 +1,29 @@
+body {
+    padding: 10px;
+}
+
+.nav {
+    background-color: beige;
+    margin-top: 10px;
+}
+
+.nav-item {
+    padding-inline: 8px;
+    border-right: 1px black solid;
+}
+
+form input, form textarea {
+    width: 60%;
+}
+
+.nav-txt {
+    display: none;
+}
+
+.nav-item:hover .nav-txt {
+    display: inline-flex !important;
+}
+
+.nav-item:hover {
+    background-color: bisque;
+}

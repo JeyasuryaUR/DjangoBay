@@ -1,0 +1,14 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <form method="post" style="display: flex; flex-direction: column; padding: 16px;">
+        <!-- <form action="{% url 'create_listing' %}" method="post">
+            {% csrf_token %}
+
+            <input type="text"
+        </form> -->
+        {% csrf_token %}    
+        <table>{{form}}</table>
+        <input type="submit" value="CREATE" class="btn btn-primary mt-4">
+    </form>
+{% endblock %}

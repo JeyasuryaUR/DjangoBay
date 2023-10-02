@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Invalid Bid</title>
+    <link href="{% static 'auctions/errors_style.css' %}" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Err! Something Happened.</h1>
+      <p>{{err_msg}}</p>
+      <a href="{% url 'listing' pid=prod_id %}" class="btn">Go Back to Listing</a>
+    </div>
+  </body>
+</html>
